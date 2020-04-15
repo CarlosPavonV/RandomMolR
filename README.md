@@ -1,3 +1,7 @@
 # RandomMolR
-Random scripts for molecular data edition in R<br/><br/>
-GBclean shortens the names of sequences in FASTA alignments downloaded from GenBank
+Random scripts for molecular data edition in R:<br/><br/>
+BPPformat creates a sequence file in BPP format based on a concatenated FASTA alignment and a partitions file in raxml format.<br/><br/>
+CreateIndLoc splits a concatenated FASTA alignment into individual locus alignments based on a partitions file in raxml format.<br/><br/>
+DartPart takes a genlight object (such as that used in dartR: https://github.com/green-striped-gecko/dartR) and creates a partitions file in raxml or nexus format. Optionally, it writes files with the individual alignments of each locus.<br/><br/>
+GBclean shortens the names of sequences downloaded from GenBank in a somewhat flexible way.<br/><br/>
+seattleR is an R version of SeATTLE (Sequence Alignment Transformation into a Table for Later Edition), which takes a concatenated FASTA alignment and a partitions file to give you a data frame in which columns correspond to loci. Among other things, this table can be used as input for phrynomics (https://github.com/bbanbury/phrynomics/) to extract and manipulate SNPs.<br/><br/>
