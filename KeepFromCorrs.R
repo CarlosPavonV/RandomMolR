@@ -41,7 +41,7 @@ KeepFromCorrs <- function(input,threshold,optimize.me,verbose){
       if(verbose==TRUE){
         keep.track=keep.track+1
         bad.counts <- length(counts$Freq[which(counts$Freq>1)])
-        print(paste("Round ",keep.track,". ","Bad counts = ",bad.counts,": This number must be 1 in order to proceed to next step.",sep="")) 
+        print(paste("Round ",keep.track,". ","Bad counts = ",bad.counts,": This number must be 0 in order to proceed to next step.",sep="")) 
       }
     }
     p.pairs[,3:6] <- sapply(p.pairs[,3:6],as.numeric)
@@ -90,7 +90,7 @@ KeepFromCorrs <- function(input,threshold,optimize.me,verbose){
         if(verbose==TRUE){
           keep.track=keep.track+1
           bad.counts <- length(counts$Freq[which(counts$Freq>1)])
-          print(paste("Round ",keep.track,". ","Bad counts = ",bad.counts,": This number must be 1 in order to proceed to next step.",sep="")) 
+          print(paste("Round ",keep.track,". ","Bad counts = ",bad.counts,": This number must be 0 in order to proceed to next step.",sep="")) 
         }
       }
       pos.change <- which(p.pairs$longcomp>1)
