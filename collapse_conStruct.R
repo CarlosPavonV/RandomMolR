@@ -68,6 +68,8 @@ collapse_conStruct <- function(freqs,coords,miles,threshold,logdist,filterlocs,f
   freqs.fin <- sapply(freqs.fin,as.numeric)
   freqs.fin <- matrix(freqs.fin,ncol=length(freqs.fin.gen),nrow=length(freqs.fin.locs))
   dimnames(freqs.fin) <- list(freqs.fin.locs,freqs.fin.gen)
+  geo.dist.fin <- geo.dist.fin[which(rownames(coords.coll.fin) %in% rownames(freqs.fin)),which(rownames(coords.coll.fin) %in% rownames(freqs.fin))]
+  coords.coll.fin <- coords.coll.fin[which(rownames(coords.coll.fin) %in% rownames(freqs.fin)),]
   list.out <- list()
   list.out$freqs.fin <- freqs.fin
   list.out$collapsed.locs <- collapsed.locs
