@@ -10,7 +10,7 @@ DartPart <- function(globject,format.part,outfile,align.prefix,resol.method){
   require(ade4)
   or.options <- options()
   options(scipen = 999)
-  trim.seqs <- globject$other$loc.metrics$TrimmedSequence
+  trim.seqs <- as.character(globject$other$loc.metrics$TrimmedSequence)
   loc.l <- nchar(trim.seqs,"char")
   par.t <- data.frame(loc.l)
   par.t$beg[[1]] <- 1
