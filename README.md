@@ -1,5 +1,6 @@
 # RandomMolR
 Random scripts for molecular data edition in R:<br/><br/>
+biogeobears2simmap creates a simmap object from the output of stochastic character mapping with BioGeoBears.<br/><br/>
 BPPformat creates a sequence file in BPP format based on a concatenated FASTA alignment and a partitions file in raxml format.<br/><br/>
 collapse_conStruct is used to edit the input files used by conStruct (https://github.com/gbradburd/conStruct) by collapsing localities that are geographically close to each other based on a distance threshold and updating the allele frequency, coordinate, and geographic distance matrices accordingly.<br/><br/>
 CreateIndLoc splits a concatenated FASTA alignment into individual locus alignments based on a partitions file in raxml format.<br/><br/>
