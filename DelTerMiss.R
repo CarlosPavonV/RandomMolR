@@ -30,6 +30,8 @@ DelTerMiss <- function(alignment,base.case,outfile){
       pos.del <- c(pos.del,j)
     }
   }
+  lead.del <- c()
+  drag.del <- c()
   if(length(pos.del)>0){
     if((all(diff(pos.del)==1)&pos.del[1]==1)|(length(pos.del)==1&all(pos.del==1))){
       lead.del <- pos.del
