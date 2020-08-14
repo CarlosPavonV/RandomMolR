@@ -5,7 +5,7 @@ CreateIndLoc <- function(alignment,parts,prefix){
   #prefix = character string, appended to file names with individual alignments, e.g. "Locus"
   require(seqinr)
   require(tidyr)
-  alin <- read.fasta(file=alignment)
+  alin <- read.fasta(file=alignment,forceDNAtolower=F)
   part.df <- read.csv(parts,sep="=",header=FALSE)
   part.df <- separate(part.df,col=2,into=c("beg","end"),sep="-",convert=T,remove=T)
   for (i in 1:nrow(part.df)){
