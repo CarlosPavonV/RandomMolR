@@ -24,6 +24,7 @@ collapse_conStruct <- function(freqs,coords,miles,threshold,logdist,filterlocs,f
   small.dist$X2 <- as.character(small.dist$X2)
   coords.coll <- as.data.frame(coords)
   coords.coll$Group <- rownames(coords.coll)
+  colnames(coords.coll) <- c("Lon","Lat","Group")
   while(any(coords.coll$Group %in% small.dist[,2])){
     for (i in 1:nrow(coords.coll)){
       if(coords.coll$Group[i] %in% small.dist[,2]){
