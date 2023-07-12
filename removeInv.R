@@ -10,7 +10,7 @@ removeInv <- function(alignment,output){
     df.tmp[i,] <- dna.tmp[[i]]
   }
   fun.tmp <- function(x){
-    x.tmp <- x[-which(x=="N" | x=="n")]
+    x.tmp <- x[-which(x=="N" | x=="n" | x=="-" | x=="?")]
     l.tmp <- length(unique(x.tmp))
     if(l.tmp>1){
       return(FALSE)
