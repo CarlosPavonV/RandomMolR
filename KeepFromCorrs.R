@@ -20,7 +20,7 @@ KeepFromCorrs <- function(input,threshold,optimize.me,verbose){
   #               only applicable when input is a data frame. Otherwise the decision of which character/loci to keep is arbitrary
   #verbose = TRUE or FALSE, self-explanatory
   '%notin%' <- Negate('%in%')
-  if(class(input)=="data.frame"){
+  if(class(input)[1]=="data.frame"){
     p.pairs <- input
     p.pairs[,1:2] <- sapply(p.pairs[,1:2],as.character)
     p.pairs[,3:5] <- sapply(p.pairs[,3:5],as.numeric)
@@ -86,7 +86,7 @@ KeepFromCorrs <- function(input,threshold,optimize.me,verbose){
       keep.me <- sort(keep.me)
       }
   } else{
-    if(class(input)=="dist"|class(input)=="matrix"){
+    if(class(input)[1]=="dist"|class(input)[1]=="matrix"){
       p.pairs0 <- as.matrix(input)
       p.pairs <- t(combn(colnames(p.pairs0),2))
       p.pairs <- data.frame(p.pairs, dist=p.pairs0[p.pairs])
