@@ -21,7 +21,7 @@ KeepFromGraphs <- function(input,threshold,optimize.me,return.groups){
   #                If FALSE, it will return just the vector of characters/loci to be kept.
   require(igraph)
   '%notin%' <- Negate('%in%')
-  if(class(input)=="data.frame"){
+  if(class(input)[1]=="data.frame"){
     input[,1:2] <- sapply(input[,1:2],as.character)
     input[,3:5] <- sapply(input[,3:5],as.numeric)
     input.all.tr <- unique(c(input[,1],input[,2]))
@@ -44,7 +44,7 @@ KeepFromGraphs <- function(input,threshold,optimize.me,return.groups){
     keep.fin <- c(keep1,keep2)
     keep.fin <- sort(keep.fin)
   } else{
-    if(class(input)=="dist"|class(input)=="matrix"){
+    if(class(input)[1]=="dist"|class(input)[1]=="matrix"){
       input0 <- as.matrix(input)
       input <- t(combn(colnames(input0),2))
       input <- data.frame(input, dist=input0[input])
